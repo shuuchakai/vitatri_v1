@@ -98,7 +98,7 @@ function Signup() {
 
                     <nav className="signupFormNav">
                         <p className="signupFormNav_title">Contraseña:</p>
-                        <input {...register('password')} className="signupFormInput" />
+                        <input {...register('password')} type='password' className="signupFormInput" />
                         <p className="signupFormInputError">{errors.password?.message}</p>
                     </nav>
 
