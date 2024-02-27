@@ -1,0 +1,11 @@
+.dashboardCalendar_container {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboardCalendar {
+    padding: 20px;
+    width: 1200px;
+    height: 100vh;
+    margin-left: 250px;
+}

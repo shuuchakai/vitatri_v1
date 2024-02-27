@@ -55,6 +55,10 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'BlogPost',
     }],
+    recipes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe',
+    }],
 }, { timestamps: true });
 
 const User = model('User', userSchema);

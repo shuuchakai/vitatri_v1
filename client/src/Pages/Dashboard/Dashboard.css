@@ -1,59 +1,89 @@
-.dashboardPrincipal_container {
-    display: flex;
+.dashboardPrincipalContainer {
     height: 100vh;
-    flex-direction: column;
-    margin: 0px 0px 0px 250px;
 
-    background-color: var(--primary-color-50);
-}
-
-.dashboardPrincipal_containerTitle {
-    font-size: 30px;
-    font-weight: 800;
-
-    padding: 10px 20px;
-    margin-bottom: 10px;
-
-    background-color: var(--primary-color-900);
-    color: var(--primary-color-50);
-
-    transition: 400ms ease;
-}
-
-.dashboardPrincipal_containerTitle:hover {
-    background-color: var(--primary-color-700);
-}
-
-.dashboardPrincipal_info {
-    margin: 0 auto;
     padding: 20px;
-    
+    margin-left: 250px;
+}
+
+.dashboardPrincipal_infoContainer {
+    width: 100%;
+
     display: flex;
-    flex-direction: column;
-
-    background-color: var(--primary-color-400);
-    border-radius: 10px;
-
+    align-items: center;
+    justify-content: space-between;
 }
 
 .dashboardPrincipal_infoTitle {
-    font-size: 20px;
-    font-weight: 800;
-
-    margin-bottom: 10px;
-
-    color: var(--primary-color-900);
-
-    transition: 400ms ease;
+    font-weight: 600;
 }
 
-.dashboardPrincipal_infoText {
-    font-size: 15px;
-    font-weight: 400;
+.dashboardPrincipal_title {
+    font-size: 25px;
+    font-weight: 800;
+}
 
-    margin-bottom: 10px;
+.dashboardPrincipal_container {
+    height: 100%;
 
-    color: var(--primary-color-900);
+    padding: 20px;
 
-    transition: 400ms ease;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboardPrincipal_progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    border: 1px solid var(--primary-color-700);
+}
+
+.dashboardPrincipal_general {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    border: 1px solid var(--primary-color-700);
+}
+
+.dashboardPrincipal_chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+
+    border: 1px solid var(--primary-color-700);
+}
+
+.dashboardPrincipal_map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+
+    border: 1px solid var(--primary-color-700);
+}
+
+.dashboardPrincipal_calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+
+    border: 1px solid var(--primary-color-700);
 }

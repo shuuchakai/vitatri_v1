@@ -20,7 +20,7 @@ function Dashboard() {
 
     const getBMICategory = (bmi) => {
         if (bmi < 18.5) return 'Por debajo del peso normal';
-        if (bmi >= 18.5 && bmi < 25) return 'Normal';
+        if (bmi >= 18.5 && bmi < 25) return 'Peso ideal';
         if (bmi >= 25 && bmi < 30) return 'Sobrepeso';
         if (bmi >= 30) return 'Obesidad';
     }
@@ -28,15 +28,23 @@ function Dashboard() {
     return (
         <>
             <DashboardSidebar />
-            <section className="dashboardPrincipal_container">
-                <p className="dashboardPrincipal_containerTitle">Bienvenido, {firstName} {lastName}</p>
-                <div className="dashboardPrincipal_info">
-                    <p className="dashboardPrincipal_infoTitle">Información personal</p>
-                    <p className="dashboardPrincipal_infoText">Peso: {weight} kg</p>
-                    <p className="dashboardPrincipal_infoText">Altura: {height} cm</p>
-                    <p className="dashboardPrincipal_infoText">IMC: {bmi.toFixed(2)} ({getBMICategory(bmi)})</p>
-                </div>
-            </section>
+            <div className="dashboardPrincipalContainer">
+                <section className="dashboardPrincipal_infoContainer">
+                    <p className="dashboardPrincipal_title">Bienvenido, {firstName} {lastName}</p>
+                    <div className="dashboardPrincipal_info">
+                        <p><span className="dashboardPrincipal_infoTitle">Peso: </span>{weight} kg</p>
+                        <p><span className="dashboardPrincipal_infoTitle">Altura: </span>{height} cm</p>
+                        <p><span className="dashboardPrincipal_infoTitle">IMC: </span>{bmi.toFixed(2)} ({getBMICategory(bmi)})</p>
+                    </div>
+                </section>
+                <section className="dashboardPrincipal_container">
+                    <div className="dashboardPrincipal_progress">hola</div>
+                    <div className="dashboardPrincipal_general">hola</div>
+                    <div className="dashboardPrincipal_chart">hola</div>
+                    <div className="dashboardPrincipal_map">hola</div>
+                    <div className="dashboardPrincipal_calendar">hola</div>
+                </section>
+            </div>
         </>
     );
 }
