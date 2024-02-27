@@ -14,7 +14,7 @@ function Dashboard() {
         return null;
     }
 
-    const { firstName, lastName, email, weight, height } = user.result;
+    const { firstName, lastName, email, weight, height, _id } = user.result;
     const heightInMeters = height / 100;
     const bmi = weight / (heightInMeters * heightInMeters);
 
@@ -32,7 +32,7 @@ function Dashboard() {
                 <section className="dashboardPrincipal_infoContainer">
                     <p className="dashboardPrincipal_title">Bienvenido, {firstName} {lastName}</p>
                     <div className="dashboardPrincipal_info">
-                        <p><span className="dashboardPrincipal_infoTitle">Peso: </span>{weight} kg</p>
+                        <p><span className="dashboardPrincipal_infoTitle">Peso: {_id} </span>{weight} kg</p>
                         <p><span className="dashboardPrincipal_infoTitle">Altura: </span>{height} cm</p>
                         <p><span className="dashboardPrincipal_infoTitle">IMC: </span>{bmi.toFixed(2)} ({getBMICategory(bmi)})</p>
                     </div>

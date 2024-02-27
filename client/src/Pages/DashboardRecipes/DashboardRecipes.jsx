@@ -12,6 +12,8 @@ function DashboardRecipes() {
     const handleSearchChange = (event) => {
         setSearch(event.target.value);
     }
+    
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const handleSearchSubmit = async (event) => {
         event.preventDefault();
@@ -21,7 +23,9 @@ function DashboardRecipes() {
 
         setResults(data.foods);
         console.log(data.foods);
+        console.log(user.result._id);
     }
+
 
     const handleAddToRecipe = (food) => {
         setRecipe([...recipe, food]);
@@ -49,7 +53,7 @@ function DashboardRecipes() {
 
     // Modificar esta madre, no funciona aún del todo, se necesita implementar el código del back para la subida de las recetas.
     const handleSaveRecipe = async () => {
-        const response = await fetch('http://localhost:5000/api/recipes', {
+        const response = await fetch('http://localhost:3000/api/createRecipe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -57,11 +61,12 @@ function DashboardRecipes() {
             body: JSON.stringify({
                 name: 'Mi receta',
                 foods: recipe,
+                user: user.result._id
             }),
         });
-    
+
         const data = await response.json();
-    
+
         console.log(data);
     }
 
