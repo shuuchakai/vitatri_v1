@@ -20,7 +20,14 @@ export const createRecipe = async (req, res) => {
 
 export const getRecipes = async (req, res) => {
     try {
-        const recipes = await Recipe.find();
+        const userId = req.query.userId;
+        let recipes;
+
+        if (userId) {
+            recipes = await Recipe.find({ user: userId });
+        } else {
+            recipes = await Recipe.find();
+        }
 
         if (!recipes) throw new Error('No recipes found');
 
@@ -29,3 +36,16 @@ export const getRecipes = async (req, res) => {
         res.status(400).json({ msg: error });
     }
 }
+
+export const getRecipe = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const recipe = await Recipe.findById(id);
+
+        if (!recipe) throw new Error('No recipe found');
+
+        res.status(200).json(recipe);
+    } catch (error) {
+        res.status(400).json({ msg: error });
+    }
+};

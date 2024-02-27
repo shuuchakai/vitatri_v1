@@ -6,6 +6,7 @@ import cors from 'cors';
 
 import userRouter from './routes/user.router.js';
 import recipeRouter from './routes/recipe.router.js';
+import eventRouter from './routes/event.router.js';
 
 dotenv.config();
 const app = express();
@@ -29,6 +30,7 @@ app.use((err, req, res, next) => {
 
 app.use('/api', userRouter);
 app.use('/api', recipeRouter);
+app.use('/api', eventRouter);
 
 mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
